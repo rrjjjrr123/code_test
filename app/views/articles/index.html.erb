@@ -1,0 +1,36 @@
+<h1>Recent Articles</h1>
+
+<table class="data-table">
+  <colgroup>
+    <col width="50%" />
+    <col width="20%" />
+    <col width="15%" />
+    <col width="15%" />
+  </colgroup>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Status</th>
+    <th>Publishing Date</th>
+  </tr>
+  <% @articles.each do |article| %>
+    <tr id="article-<%= article.id %>">
+      <td class="title">
+        <%= article.title %>
+      </td>
+      <td class="author">
+        <%= article.author.name %>
+      </td>
+      <td class="status">
+        <%= article_status(article)%>
+      </td>
+      <td class="published-at">
+        <%= article.published_at.strftime("%Y-%m-%d") if article.published_at %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%== pagy_nav(@pagy) %>
+<h2>Recent Authors</h2>
+<p><%= recent_authors(@articles) %></p>
