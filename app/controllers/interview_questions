@@ -1,0 +1,48 @@
+test-1  
+
+Extend a module inside a class will add the instance methods defined in the module to the extended class.
+
+The Include will add the instance methods defined in the module to the instances of the class including the module
+
+test-2
+1. clone maintains the frozen or tainted state of obj. whereas #dup would change it to tainted.
+
+2. clone copies any singleton methods of an object but #dup does not support this.
+
+test-3
+    
+Procs don’t care about the correct number of arguments, while lambdas will raise an exception.
+Return and break behaves differently in procs and lambdas.
+
+
+test-4 
+
+def calculation(a, b, operation)
+  operation.call(a, b)
+end
+
+puts calculation(5, 6, lambda { |a, b| a + b }) # addition
+
+def calculation(a, b)
+  yield(a, b)
+end
+
+puts calculation(5, 6) { |a, b| a + b } # addition
+puts calculation(5, 6) { |a, b| a - b } # subtraction
+
+
+test-5 
+
+SOA(Service Oriented Architecture)
+
+test-6
+RUBY ON RAILS for beginners
+The Rails 3 way
+Restful Rails Development
+
+test-7
+1. I will create a route for articles in config/routes.rb
+2. then i will create a index action in the controller
+3. then i will fetch the data which need to be called from the model.
+4. Then i will update the view of index page.
+
